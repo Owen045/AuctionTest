@@ -27,3 +27,19 @@ objects to process. You are free to add your own modules in the ```src``` direct
 Technically there's nothing stopping you from loading the CSV into pandas and performing data science 
 methods to calculate the winner for each auction. However, it's important to demonstrate your problem 
 solving skills when developing a system. Your program is supposed to handle the data as it comes in.
+
+
+###################################### Owen Notes ########################################
+
+## Time taken (breakdown)
+
+## Dependencies
+
+## Run conditions
+
+## Planning Notes
+
+1. Create auction class for storing highest bid state
+2. Create auctioneer class for processing bids, seperating into auctions and determining winner
+3. Create logging class to log seperate log file for each auction
+4. 
