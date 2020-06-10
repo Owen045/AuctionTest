@@ -39,7 +39,7 @@ class Bid:
         :return: (dict) bid data
         """
         return {
-            "account id": self.auction_id,
+            "account id": self.account_id, # bugfix - self.auction_id -> self.account_id
             "amount": self.amount,
             "auction id": self.auction_id,
             "time unit": self.time_unit
