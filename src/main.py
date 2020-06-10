@@ -1,4 +1,4 @@
-from src.data import AuctionData
+from data import AuctionData
 
 
 def main() -> None:

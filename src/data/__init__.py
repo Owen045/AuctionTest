@@ -36,3 +36,11 @@ class AuctionData:
     @property
     def data(self) -> List[Bid]:
         return self._data
+
+    def add_bid(self):
+        """
+        Append a new bid to data
+        :return:
+        """
+        b = Bid.generate()
+        self._data.append(b)
