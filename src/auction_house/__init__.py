@@ -1,4 +1,4 @@
-from Logger import logger
+from Logger import Logger
 
 
 class Auction:
@@ -10,16 +10,34 @@ class Auction:
         self.highest_bid = 0
         self.highest_bidder = None
         self.bid_time = 0
+        self.log = Logger(id=auction_id)
+        self.log.init_logfile()
 
     def set_highest(self, bid):
         """Set highest_bid attr to input bid vals"""
-
-        if bid.amount > self.highest_bid:
-            self.highest_bid = bid.amount
-            self.highest_bidder = bid.account_id
-            self.bid_time = bid.time_unit
+        if self.check_val_pos(bid) is True:
+            if bid.amount > self.highest_bid:
+                self.highest_bid = bid.amount
+                self.highest_bidder = bid.account_id
+                self.bid_time = bid.time_unit
+                self.log.add_log_row(message=f'New highest bid: {self.highest_bid}, bidder: {bid.account_id}')
+            else:
+                pass
         else:
+            self.log.add_log_row(message=f'Bid missed: {bid.amount}, bidder: {bid.account_id}')
             pass
+
+    def check_val_pos(self, bid):
+        """
+        Check if bid.amount is positive and log as error if it is
+        :return:
+        """
+        if bid.amount <= 0:
+            self.log.add_log_row(message=f'invalid bid amount: {bid.amount} is negative,'
+                                         f'bidder: {bid.account_id}', log_level='error')
+            return False
+        else:
+            return True
 
 
 class Auctioneer:

@@ -1,4 +1,5 @@
 import unittest
+import os
 import pandas as pd
 
 
@@ -9,6 +10,11 @@ class TestCSV(unittest.TestCase):
         Run pandas methods on csv to extract key data
         :return:
         """
+
+        FILE_PATH = os.path.dirname(os.path.abspath(__file__)) + "/data.csv"
+
+        df = pd.read_csv(FILE_PATH)
+
 
 
     def test_correct_auc_no(self):

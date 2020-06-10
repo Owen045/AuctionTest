@@ -47,3 +47,4 @@ solving skills when developing a system. Your program is supposed to handle the 
 4. 
 
 * Time param is red herring, should not have any impact on highest bid when compared
+* Error handling - negative prices must be filtered from results
