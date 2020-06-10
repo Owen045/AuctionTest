@@ -34,6 +34,8 @@ solving skills when developing a system. Your program is supposed to handle the 
 ## Time taken (breakdown)
 
 ## Dependencies
+1. pandas
+2. logging
 
 ## Run conditions
 
@@ -43,3 +45,5 @@ solving skills when developing a system. Your program is supposed to handle the 
 2. Create auctioneer class for processing bids, seperating into auctions and determining winner
 3. Create logging class to log seperate log file for each auction
 4. 
+
+* Time param is red herring, should not have any impact on highest bid when compared
