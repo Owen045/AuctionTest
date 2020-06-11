@@ -1,7 +1,7 @@
 import sys
 sys.path.append("..")
 from src.Logger import Logger
-from src.data import bid
+from src.data.bid import Bid
 
 
 class Auction:
@@ -36,6 +36,7 @@ class Auction:
                 self.highest_bid = bid.amount
                 self.highest_bidder = bid.account_id
                 self.bid_time = bid.time_unit
+                print(f'New highest bid in auction {bid.auction_id}: {self.highest_bid}, bidder: {bid.account_id}')
                 self.log.add_log_row(message=f'New highest bid: {self.highest_bid}, bidder: {bid.account_id}')
             else:
                 pass
@@ -88,18 +89,29 @@ class Auctioneer:
         Begin iteration through data
         :return:
         """
+
         for bid in self.data:
             self.process_bid(bid)
 
-    def accept_bid_input(self, auction_id, no_bids):
+    def accept_bid_input(self, no_bids):
         """
         Accept int of number of new bids coming in and generate new bids
-        Triggers random bid generation
+        Triggers random bid generation in Bid class which appends to auction
         :return:
         """
+
+        for i in range(no_bids):
+            bid = Bid.generate()
+            print(f'auction: {bid.auction_id}, bidder: {bid.account_id}, amount: {bid.amount}, time:{bid.time_unit}')
+            self.process_bid(bid)
+
+
 
     def auctioneer_status(self):
         """
         Auctioneer prints current status and winner of all auctions
         :return:
         """
+
+        for k, v in self.auctions.items():
+            print(f'Auction {k} winner is: {v.highest_bidder} with bid: {v.highest_bid}!')

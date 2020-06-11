@@ -12,9 +12,7 @@ class TestBids(unittest.TestCase):
         """
         Test that when new bid comes in to system with a higher bid, the auction state is reset to highest bid
         """
-        data = [1, 2, 3]
-        result = sum(data)
-        self.assertEqual(result, 6)
+
 
     def test_new_bid_miss(self):
         """
@@ -22,6 +20,12 @@ class TestBids(unittest.TestCase):
         :return:
         """
 
+    def test_new_auction_create(self):
+        """
+        Test whether if unrecognised numeric auction id is entered, a new auction will be
+        appended to auctioneer.auctions
+        :return:
+        """
 
 if __name__ == '__main__':
     unittest.main()
