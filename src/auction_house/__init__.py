@@ -1,6 +1,7 @@
 import sys
 sys.path.append("..")
 from src.Logger import Logger
+from src.data import bid
 
 
 class Auction:
@@ -17,6 +18,15 @@ class Auction:
         self.log = Logger(id=auction_id, test=self.test)
         self.log.init_logfile()
 
+    def set_invalid(self):
+        """
+        If after each bid, highest bid is still 0, set as 'invalid bid'
+        :return:
+        """
+        if self.highest_bid == 0:
+            self.highest_bid = 'invalid bid'
+        else:
+            pass
 
     def set_highest(self, bid):
         """Set highest_bid attr to input bid vals"""
@@ -32,6 +42,8 @@ class Auction:
         else:
             self.log.add_log_row(message=f'Bid missed: {bid.amount}, bidder: {bid.account_id}')
             pass
+
+        self.set_invalid()
 
     def check_val_pos(self, bid):
         """
@@ -78,3 +90,16 @@ class Auctioneer:
         """
         for bid in self.data:
             self.process_bid(bid)
+
+    def accept_bid_input(self, auction_id, no_bids):
+        """
+        Accept int of number of new bids coming in and generate new bids
+        Triggers random bid generation
+        :return:
+        """
+
+    def auctioneer_status(self):
+        """
+        Auctioneer prints current status and winner of all auctions
+        :return:
+        """

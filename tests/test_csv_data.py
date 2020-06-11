@@ -57,7 +57,7 @@ class TestCSV(unittest.TestCase):
         self.ac.start()
 
         for auc, bid in self.win_dict.items():
-            self.assertEqual(bid, self.ac.auctions[auc])
+            self.assertEqual(bid, self.ac.auctions[auc].highest_bid)
 
         # implement code to quick calc max values
 

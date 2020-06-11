@@ -10,7 +10,7 @@ class Logger:
         self.test = test
         self.name = f'{id}_{self.now}.log'
 
-        if self.test is True:
+        if self.test is False:
             try:
                 self.file = open(f'log/{self.name}', 'r')
             except FileNotFoundError:
@@ -22,7 +22,7 @@ class Logger:
         """
         initialise logfile params
         """
-        if self.test is True:
+        if self.test is False:
             self.my_logger = logging.getLogger(self.name)
             file_handler = logging.FileHandler(fr'logs/{self.name}', 'w')
 
@@ -39,7 +39,7 @@ class Logger:
         Add new line to log file
         :return:
         """
-        if self.test is True:
+        if self.test is False:
             if log_level == 'info': # for normal bid transactions
                 self.my_logger.info(message)
             elif log_level == 'error': # for error bids e.g. negatives
