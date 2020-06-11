@@ -1,3 +1,5 @@
+import collections
+
 import sys
 sys.path.append("..")
 from src.Logger import Logger
@@ -39,9 +41,10 @@ class Auction:
                 print(f'New highest bid in auction {bid.auction_id}: {self.highest_bid}, bidder: {bid.account_id}')
                 self.log.add_log_row(message=f'New highest bid: {self.highest_bid}, bidder: {bid.account_id}')
             else:
+                self.log.add_log_row(message=f'Bid missed: {bid.amount}, bidder: {bid.account_id}')
                 pass
         else:
-            self.log.add_log_row(message=f'Bid missed: {bid.amount}, bidder: {bid.account_id}')
+
             pass
 
         self.set_invalid()
@@ -113,5 +116,7 @@ class Auctioneer:
         :return:
         """
 
-        for k, v in self.auctions.items():
+        ordered = collections.OrderedDict(sorted(self.auctions.items()))
+
+        for k, v in ordered.items():
             print(f'Auction {k} winner is: {v.highest_bidder} with bid: {v.highest_bid}!')

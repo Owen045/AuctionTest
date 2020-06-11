@@ -1,3 +1,5 @@
+## See Owen Notes section at below
+
 # auction-test
 This is to test the ability of solving problems in python. 
 
@@ -32,12 +34,30 @@ solving skills when developing a system. Your program is supposed to handle the 
 ###################################### Owen Notes ########################################
 
 ## Time taken (breakdown)
+Took longer than I should have, have to admit
+
+* Wed Eve - looked at question and explored data ~ 1 hour
+* Wed Eve - began drafting plan on paper and in notes, then started code ~ 2 hours
+* Thurs Morn - Finishing features ~ 1 hour
+
+** Additional Time **
+* Thurs Morn - approx 1 hour - trying to fix input bugs and tie in new bid handling
 
 ## Dependencies
 1. pandas
 2. logging
 
 ## Run conditions
+1. Just run main.py file and then enter values on input when prompted
+2. inspect log files in log directory
+3. will have to manually clear out logs between each auction round
+
+## To Do:
+
+1. Add thorough testing to new bid functionality, ran out of time
+2. Have separated log directories for each round of auctions
+3. fix logging to log all events
+4. add more robust error handling
 
 ## Planning Notes
 
