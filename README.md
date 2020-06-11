@@ -48,9 +48,10 @@ Took longer than I should have, have to admit
 2. logging
 
 ## Run conditions
-1. Just run main.py file and then enter values on input when prompted
-2. inspect log files in log directory
-3. will have to manually clear out logs between each auction round
+1. Create an empty 'logs' file in src
+2. Just run main.py file and then enter values on input when prompted
+3. inspect log files in log directory
+4. will have to manually clear out logs between each auction round
 
 ## To Do:
 
