@@ -56,8 +56,7 @@ Took longer than I should have, have to admit
 
 1. Add thorough testing to new bid functionality, ran out of time
 2. Have separated log directories for each round of auctions
-3. fix logging to log all events
-4. add more robust error handling
+3. fix logging to log all events - fixed 
 
 ## Planning Notes
 
